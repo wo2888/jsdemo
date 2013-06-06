@@ -1,0 +1,45 @@
+<html>
+<head>
+	<script>
+		function h(){
+			var c = document.getElementsByName("cb");
+		    var w=window.dialogArguments;
+		    var s="";
+		    for(var i = 0; i < c.length; i++){
+				var t = w.document.getElementById(c[i].value);
+				if(c[i].checked){
+				     if(s==""){
+				       s=c[i].value;
+				     }else{
+				       s=s+","+c[i].value;
+				     }
+					 t.style.display="";
+				}else{
+					 t.style.display="none";
+				}
+		    }
+		}
+	</script>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<td>
+				<input type="checkbox" name="cb" value="col1" checked>名称</input>
+				
+				<input type="checkbox" name="cb" value="col2" checked>简介</input>
+				
+				<input type="checkbox" name="cb" value="col3" checked>点击数</input>
+
+				<input type="checkbox" name="cb" value="col4" checked>发表时间</input>
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="4">
+				<input type="button" value="确定" onclick="h()"></input>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
